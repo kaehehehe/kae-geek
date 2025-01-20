@@ -9,7 +9,7 @@ type Work = {
 };
 
 export async function WorkGrid() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/data`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/works`);
   const workList: Work[] = await response.json();
 
   return (
