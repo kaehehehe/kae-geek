@@ -3,7 +3,7 @@ import path from "path";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const filePath = path.join("app/[locale]/work/data", "work.json");
+  const filePath = path.join("app/[locale]/works/data", "work.json");
 
   try {
     const jsonData = await fs.readFile(filePath, "utf8");

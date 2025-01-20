@@ -17,11 +17,11 @@ export default function Navbar({ locale }: { locale: Locale }) {
           <Link href={`/${locale}/`}>
             <Text>Home</Text>
           </Link>
-          <Link href={`/${locale}/work`}>
-            <Text>Work</Text>
+          <Link href={`/${locale}/works`}>
+            <Text>Works</Text>
           </Link>
-          <Link href={`/${locale}/post`}>
-            <Text>Post</Text>
+          <Link href={`/${locale}/posts`}>
+            <Text>Posts</Text>
           </Link>
         </Flex>
 
