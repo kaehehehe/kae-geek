@@ -1,3 +1,6 @@
+import React from "react";
+import { WorkGrid } from "./components/WorkGrid";
+
 export default function Work() {
-  return <h1>Work Page</h1>;
+  return <WorkGrid />;
 }
