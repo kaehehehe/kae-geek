@@ -2,7 +2,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Locale, routing } from "@/i18n/routing";
-import { Center, Flex, UIProvider } from "@yamada-ui/react";
+import { Container, Flex, UIProvider } from "@yamada-ui/react";
 import "../reset.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -29,7 +29,9 @@ export default async function LocaleLayout({
           <UIProvider>
             <Navbar locale={locale} />
             <Flex direction={"column"} justify={"center"} alignItems={"center"}>
-              <Center>{children}</Center>
+              <Container height={"fit-content"} minHeight={"90vh"}>
+                {children}
+              </Container>
               <Footer />
             </Flex>
           </UIProvider>
