@@ -15,7 +15,7 @@ import { CheckIcon } from "@yamada-ui/lucide";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-export default function LocaleMenuButton() {
+export function LocaleMenuButton() {
   const currentLocale = useLocale();
   const pathname = usePathname();
 

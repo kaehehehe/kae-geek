@@ -4,8 +4,8 @@ import { notFound } from "next/navigation";
 import { Locale, routing } from "@/i18n/routing";
 import { Container, Flex, UIProvider } from "@yamada-ui/react";
 import "../reset.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
 
 export default async function LocaleLayout({
   children,

@@ -1,7 +1,7 @@
 import { Flex, Text } from "@yamada-ui/react";
 import React from "react";
 
-export default function Footer() {
+export function Footer() {
   return (
     <Flex
       justify={"center"}
