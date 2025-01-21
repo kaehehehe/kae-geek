@@ -1,6 +1,7 @@
 import { Container, Flex, Grid, GridItem, Link, Text } from "@yamada-ui/react";
 import Image from "next/image";
 import styles from "../styles.module.css";
+import { headers } from "next/headers";
 
 type Work = {
   title: string;
@@ -9,7 +10,11 @@ type Work = {
 };
 
 export async function WorkGrid() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/works`);
+  const headersList = await headers();
+  const host = headersList.get("host");
+  const protocol = headersList.get("x-forwarded-proto") || "http";
+
+  const response = await fetch(`${protocol}://${host}/api/works`);
   const workList: Work[] = await response.json();
 
   return (
