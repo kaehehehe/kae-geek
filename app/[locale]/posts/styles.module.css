@@ -1,0 +1,17 @@
+.container {
+  min-height: 90vh;
+  height: fit-content;
+  max-width: 900px;
+  width: 80vw;
+}
+
+.card {
+  margin-bottom: 4px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  min-height: 40px;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
