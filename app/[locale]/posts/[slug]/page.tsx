@@ -1,8 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 import matter from "@yankeeinlondon/gray-matter";
-import { serialize } from "next-mdx-remote/serialize"; // MDX 콘텐츠 직렬화
-import { compileMDX, MDXRemote } from "next-mdx-remote/rsc"; // MDX 콘텐츠 렌더링
+import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkBreaks from "remark-breaks";
 import remarkHtml from "remark-html";
 import remarkSmartypants from "remark-smartypants";

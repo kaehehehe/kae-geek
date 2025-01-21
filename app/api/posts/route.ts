@@ -13,7 +13,7 @@ export async function GET() {
       files.map(async (file) => {
         const filePath = path.join(POSTS_PATH, file);
         const fileContent = await fs.readFile(filePath, "utf8");
-        const { data, content } = matter(fileContent);
+        const { data } = matter(fileContent);
 
         return {
           slug: file.replace(".md", ""),

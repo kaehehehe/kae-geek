@@ -1,4 +1,4 @@
-import { Flex, Text, Wrap } from "@yamada-ui/react";
+import { Flex, Text } from "@yamada-ui/react";
 import React from "react";
 import LocaleMenuButton from "./LocaleMenuButton";
 import Link from "next/link";
