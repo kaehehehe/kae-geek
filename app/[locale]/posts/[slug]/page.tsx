@@ -15,9 +15,9 @@ const POSTS_PATH = path.join(process.cwd(), "app", "posts");
 export default async function PostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
 
   try {
     const filePath = path.join(POSTS_PATH, `${slug}.md`);
