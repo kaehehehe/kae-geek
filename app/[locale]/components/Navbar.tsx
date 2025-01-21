@@ -14,10 +14,10 @@ export default function Navbar({ locale }: { locale: Locale }) {
         padding={"20px 40px"}
       >
         <Flex justify={"space-around"} width={"180px"}>
-          <Link href={`/${locale}/`}>
+          <Link href={`/${locale}/`} passHref>
             <Text>Home</Text>
           </Link>
-          <Link href={`/${locale}/works`}>
+          <Link href={`/${locale}/works`} passHref>
             <Text>Works</Text>
           </Link>
           {/* <Link href={`/${locale}/posts`}>

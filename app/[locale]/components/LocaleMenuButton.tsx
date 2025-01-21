@@ -1,4 +1,5 @@
-import Link from "next/link";
+"use client";
+
 import React from "react";
 import {
   Menu,
@@ -6,18 +7,24 @@ import {
   MenuList,
   MenuItem,
   IconButton,
-  Flex,
 } from "@yamada-ui/react";
 import { LanguagesIcon } from "@yamada-ui/lucide";
 import { useLocale } from "next-intl";
 import { Locale } from "../../../i18n/routing";
 import { CheckIcon } from "@yamada-ui/lucide";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function LocaleMenuButton() {
   const currentLocale = useLocale();
+  const pathname = usePathname();
 
   const setOpacity = (locale: Locale) => {
     return locale === currentLocale ? 1 : 0;
+  };
+
+  const changeLocalePath = (locale: Locale) => {
+    return pathname.replace(/^\/[a-z]{2}/, `/${locale}`);
   };
 
   return (
@@ -30,27 +37,25 @@ export default function LocaleMenuButton() {
         fontSize={"2xl"}
       />
       <MenuList minBoxSize={"100px"}>
-        <Link href="ja">
+        <Link href={changeLocalePath("ja")} passHref>
           <MenuItem>
             <CheckIcon opacity={setOpacity("ja")} />
             日本語
           </MenuItem>
         </Link>
 
-        <Link href="ko">
+        <Link href={changeLocalePath("ko")} passHref>
           <MenuItem>
             <CheckIcon opacity={setOpacity("ko")} />
             한국어
           </MenuItem>
         </Link>
 
-        <Link href="en">
-          <Flex alignItems={"center"}>
-            <MenuItem>
-              <CheckIcon opacity={setOpacity("en")} />
-              English
-            </MenuItem>
-          </Flex>
+        <Link href={changeLocalePath("en")} passHref>
+          <MenuItem>
+            <CheckIcon opacity={setOpacity("en")} />
+            English
+          </MenuItem>
         </Link>
       </MenuList>
     </Menu>
