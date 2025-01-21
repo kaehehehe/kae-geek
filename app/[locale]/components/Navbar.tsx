@@ -2,7 +2,6 @@ import { Flex, Text } from "@yamada-ui/react";
 import React from "react";
 import Link from "next/link";
 import { Locale } from "../../../i18n/routing";
-import { GithubIconButton } from "./GithubIconButton";
 import { LocaleMenuButton } from "./LocaleMenuButton";
 
 export function Navbar({ locale }: { locale: Locale }) {
@@ -26,7 +25,7 @@ export function Navbar({ locale }: { locale: Locale }) {
         </Flex>
 
         <Flex justify={"space-around"} width={"100px"}>
-          <GithubIconButton />
+          {/* <GithubIconButton /> */}
           <LocaleMenuButton />
         </Flex>
       </Flex>
