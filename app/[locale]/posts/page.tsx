@@ -1,4 +1,3 @@
-
 import { Locale } from "../../../i18n/routing";
 import { Posts } from "./components/Posts";
 
