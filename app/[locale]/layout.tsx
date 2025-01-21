@@ -2,9 +2,10 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Locale, routing } from "@/i18n/routing";
-import { UIProvider } from "@yamada-ui/react";
-import Header from "./components/Header";
+import { Container, Flex, UIProvider } from "@yamada-ui/react";
 import "../reset.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export default async function LocaleLayout({
   children,
@@ -26,8 +27,13 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider messages={messages}>
           <UIProvider>
-            <Header />
-            {children}
+            <Navbar locale={locale} />
+            <Flex direction={"column"} justify={"center"} alignItems={"center"}>
+              <Container height={"fit-content"} minHeight={"90vh"}>
+                {children}
+              </Container>
+              <Footer />
+            </Flex>
           </UIProvider>
         </NextIntlClientProvider>
       </body>

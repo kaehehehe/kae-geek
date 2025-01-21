@@ -6,38 +6,51 @@ import {
   MenuList,
   MenuItem,
   IconButton,
+  Flex,
 } from "@yamada-ui/react";
 import { LanguagesIcon } from "@yamada-ui/lucide";
 import { useLocale } from "next-intl";
 import { Locale } from "../../../i18n/routing";
+import { CheckIcon } from "@yamada-ui/lucide";
 
 export default function LocaleMenuButton() {
   const currentLocale = useLocale();
 
-  const setFontWeight = (locale: Locale) => {
-    return locale === currentLocale ? "700" : "400";
+  const setOpacity = (locale: Locale) => {
+    return locale === currentLocale ? 1 : 0;
   };
 
   return (
     <Menu animation="top">
       <MenuButton
         as={IconButton}
-        icon={<LanguagesIcon fontSize="2xl" />}
+        icon={<LanguagesIcon />}
         colorScheme="primary"
         variant="primary"
         fontSize={"2xl"}
       />
       <MenuList minBoxSize={"100px"}>
         <Link href="ja">
-          <MenuItem fontWeight={setFontWeight("ja")}>日本語</MenuItem>
+          <MenuItem>
+            <CheckIcon opacity={setOpacity("ja")} />
+            日本語
+          </MenuItem>
         </Link>
 
         <Link href="ko">
-          <MenuItem fontWeight={setFontWeight("ko")}>한국어</MenuItem>
+          <MenuItem>
+            <CheckIcon opacity={setOpacity("ko")} />
+            한국어
+          </MenuItem>
         </Link>
 
         <Link href="en">
-          <MenuItem fontWeight={setFontWeight("en")}>English</MenuItem>
+          <Flex alignItems={"center"}>
+            <MenuItem>
+              <CheckIcon opacity={setOpacity("en")} />
+              English
+            </MenuItem>
+          </Flex>
         </Link>
       </MenuList>
     </Menu>
