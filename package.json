@@ -1,15 +1,16 @@
 {
   "name": "kae.dev",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export",
-    "predeploy": "yarn build && yarn export",
-    "deploy": "gh-pages -d out"
+    "export": "next export"
+  },
+  "engines": {
+    "node": "22.x"
   },
   "dependencies": {
     "@yamada-ui/lucide": "^1.10.2",
