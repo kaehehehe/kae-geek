@@ -1,17 +1,22 @@
 [
   {
-    "title": "diamond",
+    "title": "Diamond",
     "thumbnail": "/images/work/diamond.png",
-    "link": "https://github.com/kaehehehe/diamond"
+    "link": "https://diamond-rose-six.vercel.app/"
   },
   {
-    "title": "lipsticks",
+    "title": "Lipsticks",
     "thumbnail": "/images/work/lipsticks.png",
-    "link": "https://github.com/kaehehehe/lipsticks"
+    "link": "https://lipsticks-one.vercel.app/"
   },
   {
-    "title": "magnemite",
+    "title": "Soft serve ice cream",
+    "thumbnail": "/images/work/soft-serve-ice-cream.png",
+    "link": "https://soft-serve-ice-cream.vercel.app/"
+  },
+  {
+    "title": "Magnemite",
     "thumbnail": "/images/work/magnemite.png",
-    "link": "https://github.com/kaehehehe/magnemite"
+    "link": "https://magnemite-blond.vercel.app/"
   }
 ]
