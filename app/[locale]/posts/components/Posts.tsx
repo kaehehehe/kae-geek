@@ -12,6 +12,7 @@ import styles from "../styles.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { Locale } from "../../../../i18n/routing";
+import { useHeaders } from "../../../hooks/useHeaders";
 
 type Post = {
   title: string;
@@ -21,7 +22,9 @@ type Post = {
 };
 
 export async function Posts({ locale }: { locale: Locale }) {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts`);
+  const { host, protocol } = await useHeaders();
+
+  const response = await fetch(`${protocol}://${host}//api/posts`);
   const posts: Post[] = await response.json();
 
   return (
