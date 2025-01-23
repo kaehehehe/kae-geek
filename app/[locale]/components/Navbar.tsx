@@ -19,9 +19,9 @@ export function Navbar({ locale }: { locale: Locale }) {
           <Link href={`/${locale}/works`} passHref>
             <Text>Works</Text>
           </Link>
-          <Link href={`/${locale}/posts`}>
+          {/* <Link href={`/${locale}/posts`}>
             <Text>Posts</Text>
-          </Link>
+          </Link> */}
         </Flex>
 
         <Flex justify={"space-around"} width={"100px"}>
