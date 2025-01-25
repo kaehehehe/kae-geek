@@ -15,6 +15,11 @@
     "link": "https://soft-serve-ice-cream.vercel.app/"
   },
   {
+    "title": "Strawberry rain",
+    "thumbnail": "/images/work/strawberry-rain.png",
+    "link": "https://strawberry-rain.vercel.app/"
+  },
+  {
     "title": "Candy spiral",
     "thumbnail": "/images/work/candy-spiral.png",
     "link": "https://candy-spiral.vercel.app/"
