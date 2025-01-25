@@ -15,6 +15,11 @@
     "link": "https://soft-serve-ice-cream.vercel.app/"
   },
   {
+    "title": "Candy spiral",
+    "thumbnail": "/images/work/candy-spiral.png",
+    "link": "https://candy-spiral.vercel.app/"
+  },
+  {
     "title": "Magnemite",
     "thumbnail": "/images/work/magnemite.png",
     "link": "https://magnemite-blond.vercel.app/"
