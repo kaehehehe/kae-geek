@@ -48,6 +48,6 @@ export default async function PostPage({
     );
   } catch (error) {
     console.error(`Error reading post ${slug}:`, error);
-    notFound(); // 포스트를 찾을 수 없는 경우 404 페이지로 이동
+    notFound();
   }
 }
