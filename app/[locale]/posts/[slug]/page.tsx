@@ -8,12 +8,14 @@ import Image from "next/image";
 export default async function PostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   const { host, protocol } = await fetchHeaders();
 
+  const { slug } = await params;
+
   const response = await fetch(
-    `${protocol}://${host}/api/posts/slug?slug=${params.slug}`
+    `${protocol}://${host}/api/posts/slug?slug=${slug}`
   );
 
   const post = await response.json();
