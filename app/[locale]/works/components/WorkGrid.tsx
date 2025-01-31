@@ -1,11 +1,9 @@
 import { Container, Flex, Grid, GridItem, Link, Text } from "@yamada-ui/react";
-import Image from "next/image";
 import styles from "../styles.module.css";
 import { fetchHeaders } from "../../../helpers/fetchHeaders";
 
 type Work = {
   title: string;
-  thumbnail: string;
   link: string;
 };
 
@@ -19,17 +17,10 @@ export async function WorkGrid() {
     <Container className={styles.container}>
       <Flex alignItems={"center"}>
         <Grid className={styles.grid}>
-          {workList.map(({ title, thumbnail, link }) => (
+          {workList.map(({ title, link }) => (
             <Link key={title} href={link} external>
               <GridItem className={styles["grid-item"]}>
-                <Image
-                  src={thumbnail}
-                  alt={title}
-                  priority
-                  fill={true}
-                  className={styles.thumbnail}
-                />
-
+                <iframe src={link} className={styles.thumbnail} />
                 <Flex
                   justify={"center"}
                   align={"center"}

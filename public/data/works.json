@@ -1,32 +1,43 @@
 [
   {
     "title": "Diamond",
-    "thumbnail": "/images/work/diamond.png",
     "link": "https://diamond-rose-six.vercel.app/"
   },
   {
     "title": "Lipsticks",
-    "thumbnail": "/images/work/lipsticks.png",
     "link": "https://lipsticks-one.vercel.app/"
   },
   {
+    "title": "Retro phone",
+    "link": "https://retro-phone-theta.vercel.app/"
+  },
+  {
+    "title": "Record player",
+    "link": "https://record-player-jade.vercel.app/"
+  },
+  {
     "title": "Soft serve ice cream",
-    "thumbnail": "/images/work/soft-serve-ice-cream.png",
     "link": "https://soft-serve-ice-cream.vercel.app/"
   },
   {
-    "title": "Strawberry rain",
-    "thumbnail": "/images/work/strawberry-rain.png",
-    "link": "https://strawberry-rain.vercel.app/"
+    "title": "Strawberry",
+    "link": "https://strawberry-wonderland.vercel.app/"
   },
   {
-    "title": "Candy spiral",
-    "thumbnail": "/images/work/candy-spiral.png",
+    "title": "Cherry",
+    "link": "https://cherry-alpha.vercel.app/"
+  },
+
+  {
+    "title": "Star candy",
     "link": "https://candy-spiral.vercel.app/"
   },
   {
+    "title": "Slime legion",
+    "link": "https://slime-legion.vercel.app/"
+  },
+  {
     "title": "Magnemite",
-    "thumbnail": "/images/work/magnemite.png",
     "link": "https://magnemite-blond.vercel.app/"
   }
 ]

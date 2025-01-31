@@ -1,32 +1,23 @@
-import fs from "fs/promises";
-import path from "path";
 import { NextResponse } from "next/server";
-import matter from "@yankeeinlondon/gray-matter";
-
-const POSTS_PATH = path.join(process.cwd(), "app", "posts");
+import { notion } from "../../lib/notion";
 
 export async function GET() {
   try {
-    const files = await fs.readdir(POSTS_PATH);
+    const response = await notion.client.databases.query({
+      database_id: process.env.NOTION_DATABASE_ID!,
+      // filter: {
+      //   property: "Status",
+      //   select: {
+      //     equals: "Live",
+      //   },
+      // },
+    });
 
-    const posts = await Promise.all(
-      files.map(async (file) => {
-        const filePath = path.join(POSTS_PATH, file);
-        const fileContent = await fs.readFile(filePath, "utf8");
-        const { data } = matter(fileContent);
-
-        return {
-          slug: file.replace(".md", ""),
-          ...data,
-        };
-      })
-    );
-
-    return NextResponse.json(posts);
+    return NextResponse.json(response);
   } catch (error) {
-    console.error("Error reading posts:", error);
+    console.error("Error fetching pages:", error);
     return NextResponse.json(
-      { error: "Failed to load posts" },
+      { error: "Failed to fetch pages" },
       { status: 500 }
     );
   }
