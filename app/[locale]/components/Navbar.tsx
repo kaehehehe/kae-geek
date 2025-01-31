@@ -1,4 +1,4 @@
-import { Flex, Text, Wrap } from "@yamada-ui/react";
+import { Flex, Text } from "@yamada-ui/react";
 import React from "react";
 import Link from "next/link";
 import { Locale } from "../../../i18n/routing";
@@ -19,9 +19,9 @@ export function Navbar({ locale }: { locale: Locale }) {
           <Link href={`/${locale}/works`} passHref>
             <Text>Works</Text>
           </Link>
-          <Link href={`/${locale}/posts`}>
+          {/* <Link href={`/${locale}/posts`}>
             <Text>Posts</Text>
-          </Link>
+          </Link> */}
         </Flex>
 
         <Flex justify={"space-around"} width={"100px"}>
