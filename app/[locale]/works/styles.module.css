@@ -44,4 +44,9 @@
 .title {
   color: white;
   font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.demo {
+  margin-right: 7px;
 }

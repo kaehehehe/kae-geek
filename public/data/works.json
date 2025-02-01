@@ -1,43 +1,73 @@
 [
   {
     "title": "Diamond",
-    "link": "https://diamond-rose-six.vercel.app/"
+    "link": {
+      "demo": "https://diamond-rose-six.vercel.app/",
+      "code": "https://github.com/kaehehehe/diamond"
+    }
   },
   {
     "title": "Lipsticks",
-    "link": "https://lipsticks-one.vercel.app/"
+    "link": {
+      "demo": "https://lipsticks-one.vercel.app/",
+      "code": "https://github.com/kaehehehe/lipsticks"
+    }
   },
   {
     "title": "Retro phone",
-    "link": "https://retro-phone-theta.vercel.app/"
+    "link": {
+      "demo": "https://retro-phone-theta.vercel.app/",
+      "code": "https://github.com/kaehehehe/retro-phone"
+    }
   },
   {
     "title": "Record player",
-    "link": "https://record-player-jade.vercel.app/"
+    "link": {
+      "demo": "https://record-player-jade.vercel.app/",
+      "code": "https://github.com/kaehehehe/record-player"
+    }
   },
   {
     "title": "Soft serve ice cream",
-    "link": "https://soft-serve-ice-cream.vercel.app/"
+    "link": {
+      "demo": "https://soft-serve-ice-cream.vercel.app/",
+      "code": "https://github.com/kaehehehe/soft-serve-ice-cream"
+    }
   },
   {
     "title": "Strawberry",
-    "link": "https://strawberry-wonderland.vercel.app/"
+    "link": {
+      "demo": "https://strawberry-wonderland.vercel.app/",
+      "code": "https://github.com/kaehehehe/strawberry-wonderland"
+    }
   },
   {
     "title": "Cherry",
-    "link": "https://cherry-alpha.vercel.app/"
+    "link": {
+      "demo": "https://cherry-alpha.vercel.app/",
+      "code": "https://github.com/kaehehehe/cherry"
+    }
   },
 
   {
     "title": "Star candy",
-    "link": "https://candy-spiral.vercel.app/"
+    "link": {
+      "demo": "https://candy-spiral.vercel.app/",
+      "code": "https://github.com/kaehehehe/star-candy"
+    }
   },
   {
     "title": "Slime legion",
-    "link": "https://slime-legion.vercel.app/"
+    "link": {
+      "demo": "https://slime-legion.vercel.app/",
+      "code": "https://github.com/kaehehehe/slime-legion"
+    }
   },
   {
     "title": "Magnemite",
-    "link": "https://magnemite-blond.vercel.app/"
+    "link": {
+      "demo": "https://magnemite-blond.vercel.app/",
+      "code": "https://github.com/kaehehehe/magnemite"
+    }
   }
 ]

@@ -4,7 +4,10 @@ import { fetchHeaders } from "../../../helpers/fetchHeaders";
 
 type Work = {
   title: string;
-  link: string;
+  link: {
+    demo: string;
+    code: string;
+  };
 };
 
 export async function WorkGrid() {
@@ -18,18 +21,25 @@ export async function WorkGrid() {
       <Flex alignItems={"center"}>
         <Grid className={styles.grid}>
           {workList.map(({ title, link }) => (
-            <Link key={title} href={link} external>
-              <GridItem className={styles["grid-item"]}>
-                <iframe src={link} className={styles.thumbnail} />
-                <Flex
-                  justify={"center"}
-                  align={"center"}
-                  className={styles["thumbnail-card"]}
-                >
-                  <Text className={styles.title}>{title}</Text>
+            <GridItem key={title} className={styles["grid-item"]}>
+              <iframe src={link.demo} className={styles.thumbnail} />
+              <Flex
+                direction={"column"}
+                justify={"center"}
+                align={"center"}
+                className={styles["thumbnail-card"]}
+              >
+                <Text className={styles.title}>{title}</Text>
+                <Flex>
+                  <Link href={link.demo} external className={styles.demo}>
+                    Demo
+                  </Link>
+                  <Link href={link.code} external>
+                    Code
+                  </Link>
                 </Flex>
-              </GridItem>
-            </Link>
+              </Flex>
+            </GridItem>
           ))}
         </Grid>
       </Flex>
