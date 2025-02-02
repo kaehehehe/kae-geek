@@ -21,6 +21,13 @@
     }
   },
   {
+    "title": "Balloon dog",
+    "link": {
+      "demo": "https://balloon-dog.vercel.app/",
+      "code": "https://github.com/kaehehehe/balloon-dog"
+    }
+  },
+  {
     "title": "Record player",
     "link": {
       "demo": "https://record-player-jade.vercel.app/",
