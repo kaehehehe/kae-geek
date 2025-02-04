@@ -5,12 +5,12 @@ export async function GET() {
   try {
     const response = await notion.client.databases.query({
       database_id: process.env.NOTION_DATABASE_ID!,
-      // filter: {
-      //   property: "Status",
-      //   select: {
-      //     equals: "Live",
-      //   },
-      // },
+      filter: {
+        property: "status",
+        status: {
+          equals: "Live",
+        },
+      },
     });
 
     return NextResponse.json(response);
