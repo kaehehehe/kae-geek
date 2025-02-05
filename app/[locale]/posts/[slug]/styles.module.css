@@ -1,0 +1,54 @@
+.container {
+  min-height: 90vh;
+  height: fit-content;
+  max-width: 900px;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.heading_1 {
+  margin: 10px 0;
+}
+
+.heading_2 {
+  margin: 8px 0;
+}
+
+.heading_3 {
+  margin: 6px 0;
+}
+
+.bulleted_list_item {
+  list-style: decimal-leading-zero;
+  list-style: inside;
+}
+
+.numbered_list_item {
+  list-style-type: decimal;
+  list-style: inside;
+}
+
+.paragraph {
+  margin-bottom: 15px;
+}
+
+.paragraph > .code {
+  background-color: rgb(255, 250, 205, 0.7);
+  padding: 1px 5px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.paragraph > .bold {
+  font-weight: bolder;
+}
+
+.image {
+  margin: 20px 0;
+  width: 100%;
+  height: auto;
+}
+
+.code {
+  margin: 20px 0;
+}

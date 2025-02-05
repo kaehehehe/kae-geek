@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { fetchHeaders } from "../../helpers/fetchHeaders";
-import { Flex, Heading, Text } from "@yamada-ui/react";
+import { Container, Flex, Heading, Text } from "@yamada-ui/react";
+import styles from "./styles.module.css";
 
 export default async function PostsPage({
   params,
@@ -15,26 +16,35 @@ export default async function PostsPage({
   const locale = (await params).locale;
 
   return (
-    <div>
+    <Container className={styles.container}>
       {posts.results.map((post: any) => {
+        const { title, description, created, slug } = post.properties;
+
         return (
           <Link
             key={post.id}
-            href={`/${locale}/posts/${post.properties.slug.rich_text[0]?.plain_text}`}
+            href={`/${locale}/posts/${slug.rich_text[0]?.plain_text}`}
           >
-            <article>
-              <Flex alignItems={"center"}>
-                <span>{post?.icon?.emoji}</span>
-                <Heading as={"h2"}>
-                  {post.properties.Title.title[0].plain_text}
-                </Heading>
-              </Flex>
+            <article className={styles.post}>
+              <Flex direction={"column"}>
+                <Flex alignItems={"center"} className={styles.title}>
+                  <Text fontSize={"2xl"} className={styles.emoji}>
+                    {post?.icon?.emoji}
+                  </Text>
+                  <Heading as={"h4"} fontSize={"2xl"}>
+                    {title.title[0].plain_text}
+                  </Heading>
+                </Flex>
 
-              <Text></Text>
+                <Text fontSize={"lg"} className={styles.description}>
+                  {description.rich_text[0].plain_text}
+                </Text>
+                <Text>{created.date.start}</Text>
+              </Flex>
             </article>
           </Link>
         );
       })}
-    </div>
+    </Container>
   );
 }

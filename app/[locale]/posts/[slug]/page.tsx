@@ -1,9 +1,19 @@
-import React from "react";
+import React, { Key } from "react";
 import { fetchHeaders } from "../../../helpers/fetchHeaders";
-import { Heading, Link, Text } from "@yamada-ui/react";
+import { Container, Flex, Heading, Link, Text } from "@yamada-ui/react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import Image from "next/image";
+import styles from "./styles.module.css";
+
+type AnnotationsType = {
+  bold: boolean;
+  color: string;
+  code: boolean;
+  italic: boolean;
+  strikethrough: boolean;
+  underline: boolean;
+};
 
 export default async function PostPage({
   params,
@@ -20,6 +30,10 @@ export default async function PostPage({
 
   const post = await response.json();
 
+  const {
+    properties: { title },
+  } = post;
+
   if (!post) {
     return <div>Post not found</div>;
   }
@@ -30,7 +44,7 @@ export default async function PostPage({
 
   const blocks = await res.json();
 
-  const renderBlock = (block: any, index: number) => {
+  const renderBlock = (block: any, index: Key) => {
     const type = block.type;
     const value = block[type];
 
@@ -48,29 +62,85 @@ export default async function PostPage({
     switch (type) {
       case "heading_1":
         return (
-          <Heading key={index} as="h1" fontSize="6xl">
+          <Heading
+            key={index}
+            as="h1"
+            fontSize="5xl"
+            className={styles.heading_1}
+          >
             {richText}
           </Heading>
         );
 
       case "heading_2":
         return (
-          <Heading key={index} as="h2" fontSize="5xl">
+          <Heading
+            key={index}
+            as="h2"
+            fontSize="4xl"
+            className={styles.heading_2}
+          >
             {richText}
           </Heading>
         );
 
       case "heading_3":
         return (
-          <Heading key={index} as="h3" fontSize="4xl">
+          <Heading
+            key={index}
+            as="h3"
+            fontSize="3xl"
+            className={styles.heading_2}
+          >
             {richText}
           </Heading>
         );
 
+      case "bulleted_list_item":
+        return (
+          <summary key={index} className={styles.bulleted_list_item}>
+            {richText}
+          </summary>
+        );
+
       case "paragraph":
         return (
-          <Text key={index} fontSize={"s"}>
-            {richText}
+          <Text key={index} fontSize={"lg"} className={styles.paragraph}>
+            {value.rich_text.map(
+              (
+                {
+                  href,
+                  plain_text,
+                  annotations,
+                }: {
+                  href: string;
+                  plain_text: string;
+                  annotations: AnnotationsType;
+                },
+                idx: Key
+              ) => {
+                const { code, bold } = annotations;
+
+                if (href) {
+                  return (
+                    <Link key={idx} href={href} external>
+                      {plain_text}
+                    </Link>
+                  );
+                }
+
+                return (
+                  <span
+                    key={idx}
+                    className={`${code ? styles.code : null} ${
+                      bold ? styles.bold : null
+                    }`}
+                  >
+                    {plain_text}
+                  </span>
+                );
+              }
+            )}
           </Text>
         );
 
@@ -82,6 +152,7 @@ export default async function PostPage({
             alt="image"
             width={600}
             height={400}
+            className={styles.image}
           />
         );
 
@@ -94,14 +165,15 @@ export default async function PostPage({
 
       case "code":
         return (
-          <SyntaxHighlighter
-            key={index}
-            language="javascript"
-            style={vscDarkPlus}
-            showLineNumbers
-          >
-            {richText}
-          </SyntaxHighlighter>
+          <div key={index} className={styles.code}>
+            <SyntaxHighlighter
+              language="typescript"
+              style={vscDarkPlus}
+              showLineNumbers
+            >
+              {richText}
+            </SyntaxHighlighter>
+          </div>
         );
 
       default:
@@ -109,5 +181,18 @@ export default async function PostPage({
     }
   };
 
-  return <>{blocks.map(renderBlock)}</>;
+  return (
+    <Container className={styles.container}>
+      <Flex
+        direction={"column"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        <Heading as={"h1"} fontSize={"6xl"} marginBottom={"60px"}>
+          {title.title[0].plain_text}
+        </Heading>
+        <span>{blocks.map(renderBlock)}</span>
+      </Flex>
+    </Container>
+  );
 }
