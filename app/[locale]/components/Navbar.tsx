@@ -15,7 +15,7 @@ export function Navbar({ locale }: { locale: Locale }) {
         maxWidth={"1200px"}
         margin={"20px auto 0"}
       >
-        <Flex justifyContent={"space-around"} width={"170px"}>
+        <Flex justifyContent={"space-around"} width={"180px"}>
           <Link href={`/${locale}/`} passHref>
             <Text>Home</Text>
           </Link>
