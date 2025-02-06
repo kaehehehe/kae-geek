@@ -183,16 +183,10 @@ export default async function PostPage({
 
   return (
     <Container className={styles.container}>
-      <Flex
-        direction={"column"}
-        justifyContent={"center"}
-        alignItems={"center"}
-      >
-        <Heading as={"h1"} fontSize={"6xl"} marginBottom={"60px"}>
-          {title.title[0].plain_text}
-        </Heading>
-        <span>{blocks.map(renderBlock)}</span>
-      </Flex>
+      <Heading as={"h1"} fontSize={"6xl"} marginBottom={"60px"}>
+        {title.title[0].plain_text}
+      </Heading>
+      <span>{blocks.map(renderBlock)}</span>
     </Container>
   );
 }
