@@ -1,6 +1,6 @@
 import React, { Key } from "react";
 import { fetchHeaders } from "../../../helpers/fetchHeaders";
-import { Container, Flex, Heading, Link, Text } from "@yamada-ui/react";
+import { Container, Heading, Link, Text } from "@yamada-ui/react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import Image from "next/image";
