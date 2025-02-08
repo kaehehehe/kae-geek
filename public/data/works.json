@@ -35,7 +35,7 @@
     }
   },
   {
-    "title": "Retro phone",  
+    "title": "Retro phone",
     "link": {
       "demo": "https://retro-phone-theta.vercel.app/",
       "code": "https://github.com/kaehehehe/retro-phone"
@@ -77,10 +77,10 @@
     }
   },
   {
-    "title": "Magnemite",
+    "title": "Magneton",
     "link": {
-      "demo": "https://magnemite-blond.vercel.app/",
-      "code": "https://github.com/kaehehehe/magnemite"
+      "demo": "https://pokemon-magneton.vercel.app/",
+      "code": "https://github.com/kaehehehe/magneton"
     }
   }
 ]
