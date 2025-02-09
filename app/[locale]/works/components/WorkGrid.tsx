@@ -20,9 +20,13 @@ export async function WorkGrid() {
     <Container className={styles.container}>
       <Flex alignItems={"center"}>
         <Grid className={styles.grid}>
-          {workList.map(({ title, link }) => (
+          {workList.map(({ title, link }, index) => (
             <GridItem key={title} className={styles["grid-item"]}>
-              <iframe src={link.demo} className={styles.thumbnail} />
+              <iframe
+                src={link.demo}
+                className={styles.thumbnail}
+                loading={index <= 6 ? "eager" : "lazy"}
+              />
               <Flex
                 direction={"column"}
                 justify={"center"}
