@@ -1,5 +1,19 @@
 [
   {
+    "title": "Slime legion",
+    "link": {
+      "demo": "https://slime-legion.vercel.app/",
+      "code": "https://github.com/kaehehehe/slime-legion"
+    }
+  },
+  {
+    "title": "Tiffany Gift Boxes",
+    "link": {
+      "demo": "https://tiffany-gift-boxes.vercel.app/",
+      "code": "https://github.com/kaehehehe/tiffany-gift-boxes"
+    }
+  },
+  {
     "title": "Valentine balloon",
     "link": {
       "demo": "https://valentine-balloon.vercel.app/",
@@ -67,13 +81,6 @@
     "link": {
       "demo": "https://record-player-jade.vercel.app/",
       "code": "https://github.com/kaehehehe/record-player"
-    }
-  },
-  {
-    "title": "Slime legion",
-    "link": {
-      "demo": "https://slime-legion.vercel.app/",
-      "code": "https://github.com/kaehehehe/slime-legion"
     }
   },
   {
