@@ -1,8 +1,8 @@
 import React, { Key } from "react";
 import { fetchHeaders } from "../../../helpers/fetchHeaders";
-import { Container, Heading, Link, Text } from "@yamada-ui/react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { Container, Flex, Heading, Link, Text } from "@yamada-ui/react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Image from "next/image";
 import styles from "./styles.module.css";
 
@@ -31,7 +31,7 @@ export default async function PostPage({
   const post = await response.json();
 
   const {
-    properties: { title },
+    properties: { title, created },
   } = post;
 
   if (!post) {
@@ -49,7 +49,7 @@ export default async function PostPage({
     const value = block[type];
 
     if (!value) {
-      return null;
+      return <br />;
     }
 
     const hasRichText = "rich_text" in value;
@@ -167,8 +167,13 @@ export default async function PostPage({
         return (
           <div key={index} className={styles.code}>
             <SyntaxHighlighter
-              language="typescript"
-              style={vscDarkPlus}
+              language={value.language}
+              style={atomOneDark}
+              customStyle={{
+                padding: "25px",
+                borderRadius: "10px",
+              }}
+              wrapLongLines
               showLineNumbers
             >
               {richText}
@@ -183,9 +188,13 @@ export default async function PostPage({
 
   return (
     <Container className={styles.container}>
-      <Heading as={"h1"} fontSize={"6xl"} marginBottom={"60px"}>
+      <Heading as={"h1"} fontSize={"6xl"} margin={"0px"} padding={"0px"}>
         {title.title[0].plain_text}
       </Heading>
+
+      <Text margin={"0px"} padding={"0px"}>
+        {created.date.start}
+      </Text>
       <span>{blocks.map(renderBlock)}</span>
     </Container>
   );
