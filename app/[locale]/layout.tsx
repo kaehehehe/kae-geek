@@ -24,6 +24,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
+      <title>Hi, I&apos;m Kae.</title>
       <body>
         <NextIntlClientProvider messages={messages}>
           <UIProvider>
