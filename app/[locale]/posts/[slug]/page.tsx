@@ -1,6 +1,6 @@
 import React, { Key } from "react";
 import { fetchHeaders } from "../../../helpers/fetchHeaders";
-import { Container, Flex, Heading, Link, Text } from "@yamada-ui/react";
+import { Container, Heading, Link, Text } from "@yamada-ui/react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Image from "next/image";
