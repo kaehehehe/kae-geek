@@ -48,16 +48,16 @@ export default async function PostPage({
     const type = block.type;
     const value = block[type];
 
-    if (!value) {
-      return <br />;
-    }
-
     const hasRichText = "rich_text" in value;
     const hasImage = "file" in value;
     const hasLink = "url" in value;
     const richText = hasRichText ? value.rich_text[0]?.plain_text : null;
     const imageUrl = hasImage ? value.file.url : null;
     const linkUrl = hasLink ? value.url : null;
+
+    if (!richText && !hasImage && !hasLink) {
+      return <br />;
+    }
 
     switch (type) {
       case "heading_1":
