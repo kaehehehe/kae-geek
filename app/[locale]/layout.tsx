@@ -29,8 +29,8 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <UIProvider>
             <Navbar locale={locale} />
-            <Flex direction={"column"} justify={"center"} alignItems={"center"}>
-              <Container height={"fit-content"} minHeight={"90vh"}>
+            <Flex direction="column" justify="center" alignItems="center">
+              <Container height="fit-content" minHeight="90vh">
                 {children}
               </Container>
               <Footer />

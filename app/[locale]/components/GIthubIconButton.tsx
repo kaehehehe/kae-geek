@@ -9,8 +9,8 @@ export function GithubIconButton() {
         icon={<GithubIcon />}
         colorScheme="primary"
         variant="primary"
-        fontSize={"2xl"}
-        color={"black"}
+        fontSize="2xl"
+        color="black"
       />
     </Link>
   );

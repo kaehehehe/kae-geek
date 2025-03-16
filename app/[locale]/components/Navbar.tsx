@@ -9,13 +9,13 @@ export function Navbar({ locale }: { locale: Locale }) {
   return (
     <nav>
       <Flex
-        justifyContent={"space-between"}
-        alignItems={"center"}
-        width={"90vw"}
-        maxWidth={"1200px"}
-        margin={"20px auto 0"}
+        justifyContent="space-between"
+        alignItems="center"
+        width="90vw"
+        maxWidth={1200}
+        margin="20px auto 0"
       >
-        <Flex justifyContent={"space-around"} width={"180px"}>
+        <Flex justifyContent="space-around" width={180}>
           <Link href={`/${locale}/`} passHref>
             <Text>Home</Text>
           </Link>
@@ -27,7 +27,7 @@ export function Navbar({ locale }: { locale: Locale }) {
           </Link>
         </Flex>
 
-        <Flex justifyContent={"space-between"} width={"90px"}>
+        <Flex justifyContent="space-between" width={90}>
           <GithubIconButton />
           <LocaleMenuButton />
         </Flex>

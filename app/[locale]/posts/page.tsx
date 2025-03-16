@@ -59,17 +59,17 @@ export default async function PostsPage({
             href={`/${locale}/posts/${slug.rich_text[0]?.plain_text}`}
           >
             <article className={styles.post}>
-              <Flex direction={"column"}>
-                <Flex alignItems={"center"} className={styles.title}>
-                  <Text fontSize={"2xl"} className={styles.emoji}>
+              <Flex direction="column">
+                <Flex alignItems="center" className={styles.title}>
+                  <Text fontSize="2xl" className={styles.emoji}>
                     {post?.icon?.emoji}
                   </Text>
-                  <Heading as={"h4"} fontSize={"2xl"}>
+                  <Heading as="h4" fontSize="2xl">
                     {title.title[0].plain_text}
                   </Heading>
                 </Flex>
 
-                <Text fontSize={"lg"} className={styles.description}>
+                <Text fontSize="lg" className={styles.description}>
                   {description.rich_text[0].plain_text}
                 </Text>
                 <Flex alignItems="center">

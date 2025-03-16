@@ -34,9 +34,9 @@ export function LocaleMenuButton() {
         icon={<LanguagesIcon />}
         colorScheme="primary"
         variant="primary"
-        fontSize={"2xl"}
+        fontSize="2xl"
       />
-      <MenuList minBoxSize={"100px"}>
+      <MenuList minBoxSize={100}>
         <Link href={changeLocalePath("ja")} passHref>
           <MenuItem>
             <CheckIcon opacity={setOpacity("ja")} />

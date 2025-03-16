@@ -105,7 +105,7 @@ export default async function PostPage({
 
       case "paragraph":
         return (
-          <Text key={index} fontSize={"lg"} className={styles.paragraph}>
+          <Text key={index} fontSize="lg" className={styles.paragraph}>
             {value.rich_text.map(
               (
                 {
@@ -188,11 +188,11 @@ export default async function PostPage({
 
   return (
     <Container className={styles.container}>
-      <Heading as={"h1"} fontSize={"6xl"} margin={"0px"} padding={"0px"}>
+      <Heading as="h1" fontSize="6xl" margin={0} padding={0}>
         {title.title[0].plain_text}
       </Heading>
 
-      <Text margin={"0px"} padding={"0px"}>
+      <Text margin={0} padding={0}>
         {created.date.start}
       </Text>
       <span>{blocks.map(renderBlock)}</span>
